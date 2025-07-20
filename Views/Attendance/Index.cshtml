@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "出退勤 打刻システム";
+}
+
+<h2>出退勤 打刻システム</h2>
+
+<form method="post" asp-controller="Attendance" asp-action="CheckIn">
+    <label>カードID（テスト用入力）:</label>
+    <input type="text" name="inputUid" required />
+    <button type="submit">打刻</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p><strong>@ViewBag.Message</strong></p>
+}
