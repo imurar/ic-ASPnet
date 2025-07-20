@@ -36,7 +36,8 @@ namespace ic_ASPnet.Controllers
         private string FindEmployeeName(string uid)
         {
             if (!System.IO.File.Exists(EmployeeCsv)) return null;
-            foreach (var line in System.IO.File.ReadAllLines(EmployeeCsv))
+            var lines = System.IO.File.ReadAllLines(EmployeeCsv, Encoding.UTF8);
+            foreach (var line in lines)
             {
                 var parts = line.Split(',');
                 if (parts.Length >= 2 && parts[1] == uid)
